@@ -9,7 +9,6 @@ License:	GPL
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/~seth/gnome-blog/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 Requires:	gnome-python-applet >= %{gnome_python2_version}
 Requires:	gnome-python-gconf  >= %{gnome_python2_version}
 Requires:	gnome-python-gnomevfs
