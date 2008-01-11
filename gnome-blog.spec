@@ -42,19 +42,7 @@ GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 
 %find_lang %name
 
-mkdir -p $RPM_BUILD_ROOT%{_menudir}/
 
-cat << EOF > $RPM_BUILD_ROOT%{_menudir}/%{name}
-?package(%{name}):\
-        needs="X11" \
-        section="Internet/Other" \
-        title="Blog Entry Poster" \
-        longtitle="Post an entry to a web log" \
-        command="%{_bindir}/gnome-blog-poster" \
-        icon="gnome-blog.png" \
-        startup_notify="true" \
-	xdg="true"
-EOF
 
 desktop-file-install --vendor="" \
   --remove-category="Application" \
@@ -98,7 +86,6 @@ rm -rf %{buildroot}
 %{py_platsitedir}/gnomeblog/*.pyc
 %{py_platsitedir}/gnomeblog/*.pyo
 %{_libdir}/blog_applet.py
-%{_menudir}/*
 %{_liconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
 %{_miconsdir}/%{name}.png
