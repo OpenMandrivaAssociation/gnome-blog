@@ -61,15 +61,19 @@ rm -rf %{buildroot}
 
 %define schemas gnomeblog
 
+%if %mdkversion < 200900
 %post
 %post_install_gconf_schemas %{schemas}
 %{update_menus}
+%endif
 
 %preun 
 %preun_uninstall_gconf_schemas %{schemas}
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 
 %files -f %name.lang
