@@ -18,7 +18,6 @@ BuildRequires:  pygtk2.0-devel >= %{gnome_python2_version}
 BuildRequires: perl-XML-Parser
 BuildRequires: ImageMagick
 BuildRequires: desktop-file-utils
-BuildArch: noarch
 
 %description
 GNOME panel object that allows convenient posting of blog entries to
