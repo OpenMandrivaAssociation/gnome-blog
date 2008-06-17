@@ -4,7 +4,7 @@
 Name:		gnome-blog
 Summary:	GNOME panel object for posting blog entries
 Version: 	0.9.1
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPL
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/~seth/gnome-blog/
@@ -86,9 +86,6 @@ rm -rf %{buildroot}
 %{_datadir}/applications/*.desktop
 %{_libdir}/bonobo/servers/*.server
 %{py_platsitedir}/gnomeblog/*
-%{py_platsitedir}/gnomeblog/*.py
-%{py_platsitedir}/gnomeblog/*.pyc
-%{py_platsitedir}/gnomeblog/*.pyo
 %{_libdir}/blog_applet.py
 %{_liconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
