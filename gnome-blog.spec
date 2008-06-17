@@ -85,7 +85,7 @@ rm -rf %{buildroot}
 %{_datadir}/gnome-2.0/ui/*.xml
 %{_datadir}/applications/*.desktop
 %{_libdir}/bonobo/servers/*.server
-%{py_platsitedir}/gnomeblog/*
+%{py_sitedir}/gnomeblog/*
 %{_libdir}/blog_applet.py
 %{_liconsdir}/%{name}.png
 %{_iconsdir}/%{name}.png
