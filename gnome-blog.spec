@@ -16,7 +16,7 @@ Requires:	gnome-python-gnomevfs
 
 BuildRequires:  pygtk2.0-devel >= %{gnome_python2_version}
 BuildRequires: perl-XML-Parser
-BuildRequires: ImageMagick
+BuildRequires: imagemagick
 BuildRequires: desktop-file-utils
 
 %description
