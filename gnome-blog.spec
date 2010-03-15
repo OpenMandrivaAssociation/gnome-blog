@@ -1,11 +1,10 @@
 %define gnome_python2_version 1.99.13
-%define version	0.9.1
 
 Name:		gnome-blog
 Summary:	GNOME panel object for posting blog entries
-Version: 	0.9.1
-Release:	%mkrel 5
-License:	GPL
+Version: 	0.9.2
+Release:	%mkrel 1
+License:	GPLv3
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/~seth/gnome-blog/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
@@ -13,11 +12,11 @@ BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 Requires:	gnome-python-applet >= %{gnome_python2_version}
 Requires:	gnome-python-gconf  >= %{gnome_python2_version}
 Requires:	gnome-python-gnomevfs
+Requires:	python-gdata
 
-BuildRequires:  pygtk2.0-devel >= %{gnome_python2_version}
-BuildRequires: perl-XML-Parser
-BuildRequires: imagemagick
+BuildRequires: pygtk2.0-devel >= %{gnome_python2_version}
 BuildRequires: desktop-file-utils
+BuildRequires: intltool
 
 %description
 GNOME panel object that allows convenient posting of blog entries to
@@ -28,7 +27,7 @@ any blog that supports the bloggerAPI.
  
 %build
 
-./configure --prefix=%_prefix --libdir=%_libdir --libexecdir=%_libdir --sysconfdir=%_sysconfdir
+%configure2_5x --prefix=%_prefix --libdir=%_libdir --libexecdir=%_libdir --sysconfdir=%_sysconfdir
 #remove generated files
 rm -f GNOME_BlogApplet.server GNOME_BlogApplet.server.in 
 
@@ -40,20 +39,6 @@ rm -rf %{buildroot}
 GCONF_DISABLE_MAKEFILE_SCHEMA_INSTALL=1 %makeinstall_std
 
 %find_lang %name
-
-
-
-desktop-file-install --vendor="" \
-  --remove-category="Application" \
-  --add-category="X-MandrivaLinux-Internet-Other" \
-  --dir $RPM_BUILD_ROOT%{_datadir}/applications $RPM_BUILD_ROOT%{_datadir}/applications/*
-
-
-# icon
-mkdir -p %buildroot/{%_liconsdir,%_iconsdir,%_miconsdir}
-install -m 644 %{buildroot}%{_datadir}/pixmaps/gnome-blog.png %{buildroot}%{_liconsdir}/%{name}.png
-convert -geometry 32x32 %{buildroot}%{_datadir}/pixmaps/gnome-blog.png %{buildroot}%{_iconsdir}/%{name}.png
-convert -geometry 16x16 %{buildroot}%{_datadir}/pixmaps/gnome-blog.png %{buildroot}%{_miconsdir}/%{name}.png
 
 %clean
 rm -rf %{buildroot}
@@ -77,17 +62,13 @@ rm -rf %{buildroot}
 
 %files -f %name.lang
 %defattr(-, root, root)
-%doc AUTHORS COPYING ChangeLog INSTALL README 
+%doc AUTHORS TODO INSTALL README 
 %{_bindir}/*
 %{_sysconfdir}/gconf/schemas/*
-%{_datadir}/pixmaps/*
 %{_datadir}/gnome-2.0/ui/*.xml
 %{_datadir}/applications/*.desktop
 %{_libdir}/bonobo/servers/*.server
-%{py_sitedir}/gnomeblog/*
+%{py_puresitedir}/gnomeblog/*
 %{_libdir}/blog_applet.py
-%{_liconsdir}/%{name}.png
-%{_iconsdir}/%{name}.png
-%{_miconsdir}/%{name}.png
-
+%_datadir/icons/hicolor/*/apps/gnome-blog.*
 
