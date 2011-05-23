@@ -3,7 +3,7 @@
 Name:		gnome-blog
 Summary:	GNOME panel object for posting blog entries
 Version: 	0.9.2
-Release:	%mkrel 2
+Release:	%mkrel 3
 License:	GPLv3
 Group:		Graphical desktop/GNOME
 URL:		http://www.gnome.org/~seth/gnome-blog/
