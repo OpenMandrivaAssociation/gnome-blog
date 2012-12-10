@@ -72,3 +72,87 @@ rm -rf %{buildroot}
 %{_libdir}/blog_applet.py
 %_datadir/icons/hicolor/*/apps/gnome-blog.*
 
+
+
+%changelog
+* Mon May 23 2011 Funda Wang <fwang@mandriva.org> 0.9.2-3mdv2011.0
++ Revision: 677711
+- rebuild to add gconftool as req
+
+* Sun Nov 07 2010 Jani Välimaa <wally@mandriva.org> 0.9.2-2mdv2011.0
++ Revision: 594851
+- rebuild for python 2.7
+
+* Mon Mar 15 2010 Götz Waschk <waschk@mandriva.org> 0.9.2-1mdv2010.1
++ Revision: 519806
+- new version
+- depend on python-gdata
+- update license
+- update file list
+
+* Fri Sep 11 2009 Thierry Vignaud <tv@mandriva.org> 0.9.1-5mdv2010.0
++ Revision: 437758
+- rebuild
+
+* Tue Jan 06 2009 Funda Wang <fwang@mandriva.org> 0.9.1-4mdv2009.1
++ Revision: 325278
+- rebuild
+
+  + Oden Eriksson <oeriksson@mandriva.com>
+    - lowercase ImageMagick
+
+* Tue Jun 17 2008 Thierry Vignaud <tv@mandriva.org> 0.9.1-3mdv2009.0
++ Revision: 222290
+- this package is not noarch
+- fix file list on x86_64
+- fix duplicated files in filelist
+- drop old menu
+- kill re-definition of %%buildroot on Pixel's request
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+
+* Mon Feb 12 2007 Jérôme Soyer <saispo@mandriva.org> 0.9.1-2mdv2007.0
++ Revision: 120014
+- Fix python policies
+- Fix python policies
+- Fix python policies
+- Fix BR
+- Rebuild for latest python
+- Import gnome-blog
+
+* Fri Jun 23 2006 Frederic Crozat <fcrozat@mandriva.com> 0.9.1-1mdv2007.0
+- Release 0.9.1
+- use new macros
+
+* Thu Aug 18 2005 Eskild Hustvedt <eskild@mandriva.org> 0.9-4mdk
+- Requires gnome-python-gnomevfs
+- %%mkrel
+
+* Wed Apr 13 2005 G�tz Waschk <waschk@linux-mandrake.com> 0.9-3mdk
+- fix buildrequires
+
+* Tue Apr 12 2005 G�tz Waschk <waschk@linux-mandrake.com> 0.9-2mdk
+- make it noarch
+- fix buildrequires
+
+* Fri Apr 01 2005 Frederic Crozat <fcrozat@mandrakesoft.com> 0.9-1mdk 
+- Release 0.9
+
+* Tue Mar 29 2005 Frederic Crozat <fcrozat@mandrakesoft.com> 0.8-3mdk 
+- Fix .server file
+- Uninstall schema when removing package
+
+* Tue Feb 08 2005 Jerome Soyer <saispo@mandrake.org> 0.8-2mdk
+- Ooops fix spec error !
+
+* Tue Feb 08 2005 Jerome Soyer <saispo@mandrake.org> 0.8-1mdk
+- New release
+
+* Sun Dec 05 2004 Michael Scherer <misc@mandrake.org> 0.7-2mdk
+- Rebuild for new python
+
