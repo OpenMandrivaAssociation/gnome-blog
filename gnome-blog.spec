@@ -6,7 +6,7 @@ Version: 	0.9.2
 Release:	%mkrel 3
 License:	GPLv3
 Group:		Graphical desktop/GNOME
-URL:		http://www.gnome.org/~seth/gnome-blog/
+URL:		https://www.gnome.org/~seth/gnome-blog/
 Source0:	ftp://ftp.gnome.org/pub/GNOME/sources/%{name}/%{name}-%{version}.tar.bz2
 BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 Requires:	gnome-python-applet >= %{gnome_python2_version}
