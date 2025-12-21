@@ -14,6 +14,11 @@ Requires:	gnome-python-gconf  >= %{gnome_python2_version}
 Requires:	gnome-python-gnomevfs
 Requires:	python-gdata
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires: pygtk2.0-devel >= %{gnome_python2_version}
 BuildRequires: desktop-file-utils
 BuildRequires: intltool
